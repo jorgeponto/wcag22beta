@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt">
+    <head>
+        <meta charset="UTF-8"/>
+
+        <title>Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.2</title>
+    	<!-- <script src="../respec/builds/respec-w3c.js" class="remove"></script>-->
+        <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove"></script>
+    	<script src="../script/wcag.js" class="remove"></script>
+    	<script src="respec-config.js" class="remove"></script>
+    	<script src="../biblio.js" class="remove"></script>
+    	<link rel="stylesheet" type="text/css" href="../css/sources.css" class="remove"/>
+        <link rel="stylesheet" type="text/css" href="guidelines.css"/>
+    </head>
+    <body>
+        <section id="abstract">
+            <p>As Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.2 abrangem uma vasta gama de recomendações para tornar os conteúdos Web mais acessíveis. Seguir estas diretrizes tornará os conteúdos mais acessíveis a uma gama mais ampla de pessoas com incapacidade, incluindo adaptações para cegueira e baixa visão, surdez e perda auditiva, limitações motoras, incapacidades da fala, fotossensibilidade e combinações destas condições, bem como algumas adaptações para dificuldades de aprendizagem e limitações cognitivas; contudo, não responderá a todas as necessidades dos utilizadores com estas incapacidades. Estas diretrizes abordam a acessibilidade de conteúdos Web em qualquer tipo de dispositivo (incluindo computadores de secretária, computadores portáteis, quiosques e dispositivos móveis). Seguir estas diretrizes também tornará frequentemente os conteúdos Web mais utilizáveis para os utilizadores em geral.</p>
+            <p>Os critérios de sucesso das WCAG 2.2 são redigidos como declarações testáveis que não dependem de tecnologias específicas. As orientações sobre como satisfazer os critérios de sucesso em tecnologias específicas, bem como informações gerais sobre a interpretação dos critérios de sucesso, são fornecidas em documentos separados. Consulte a <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Visão Geral das Diretrizes de Acessibilidade para Conteúdo Web (WCAG)</a> para uma introdução e ligações para materiais técnicos e educativos sobre as WCAG.</p>
+            <p>As WCAG 2.2 alargam as <a href="https://www.w3.org/TR/WCAG21/">Diretrizes de Acessibilidade para Conteúdo Web 2.1</a> [[WCAG21]], publicadas como Recomendação do W3C em junho de 2018. O conteúdo conforme com as WCAG 2.2 também está conforme com as WCAG 2.0 e as WCAG 2.1. O Working Group pretende que, para políticas que exijam conformidade com as WCAG 2.0 ou WCAG 2.1, as WCAG 2.2 possam constituir um meio alternativo de conformidade. A publicação das WCAG 2.2 não descontinua nem substitui as WCAG 2.0 ou as WCAG 2.1. Embora as WCAG 2.0 e WCAG 2.1 continuem a ser Recomendações do W3C, o W3C aconselha a utilização das WCAG 2.2 para maximizar a aplicabilidade futura dos esforços de acessibilidade. O W3C também incentiva a utilização da versão mais atual das WCAG no desenvolvimento ou atualização de políticas de acessibilidade Web.</p>
+        </section>
+        <section id="sotd">
+          <p>Para comentar, <a href="https://github.com/w3c/wcag/issues/new">crie uma issue no repositório GitHub das WCAG do <abbr title="World Wide Web Consortium">W3C</abbr></a>.
+            Embora os critérios de sucesso propostos neste documento façam referência a issues que acompanham a discussão,
+            o Working Group solicita que os comentários públicos sejam submetidos como novas issues,
+            uma issue por cada comentário distinto. A criação de uma conta GitHub para submeter issues é gratuita.
+            Se não for viável submeter issues no GitHub, envie um email para <a href="mailto:public-agwg-comments@w3.org?subject=WCAG%202.2%20public%20comment">public-agwg-comments@w3.org</a> (<a href="https://lists.w3.org/Archives/Public/public-agwg-comments/">arquivo de comentários</a>).</p>
+        </section>
+        <section class="informative introductory" id="intro">
+			<h2>Introdução</h2>
+			<section id="background-on-wcag-2">
+				<h3>Contexto das WCAG 2</h3>
+                <p>As Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.2 definem como tornar os conteúdos Web mais acessíveis para pessoas com incapacidade. A acessibilidade abrange uma vasta gama de incapacidades, incluindo incapacidades visuais, auditivas, físicas, da fala, cognitivas, linguísticas, de aprendizagem e neurológicas. Embora estas diretrizes abranjam uma ampla variedade de questões, não conseguem responder às necessidades de pessoas com todos os tipos, graus e combinações de incapacidade. Estas diretrizes também tornam os conteúdos Web mais utilizáveis por pessoas idosas com capacidades em mudança devido ao envelhecimento e frequentemente melhoram a usabilidade para os utilizadores em geral.</p>
+                <p>As WCAG 2.2 são desenvolvidas através do <a href="https://www.w3.org/WAI/standards-guidelines/w3c-process/">processo do W3C</a>, em cooperação com indivíduos e organizações de todo o mundo, com o objetivo de fornecer uma norma comum de acessibilidade para conteúdos Web que satisfaça as necessidades de indivíduos, organizações e governos a nível internacional. As WCAG 2.2 baseiam-se nas WCAG 2.0 [[WCAG20]] e nas WCAG 2.1 [[WCAG21]], que, por sua vez, se basearam nas WCAG 1.0 [[WAI-WEBCONTENT]], e foram concebidas para serem amplamente aplicáveis a diferentes tecnologias Web, atuais e futuras, bem como para serem testáveis através de uma combinação de testes automáticos e avaliação humana. Para uma introdução às WCAG, consulte a <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Visão Geral das Diretrizes de Acessibilidade para Conteúdo Web (WCAG)</a>.</p>
+                
+                <p>Foram encontrados desafios significativos na definição de critérios adicionais para responder às incapacidades cognitivas, linguísticas e de aprendizagem, incluindo um curto prazo de desenvolvimento, bem como dificuldades em alcançar consenso relativamente à testabilidade, implementabilidade e considerações internacionais das propostas. O trabalho continuará nesta área em futuras versões das WCAG. Encorajamos os autores a consultar as nossas orientações suplementares sobre <a href="https://www.w3.org/WAI/standards-guidelines/wcag/#supplement">melhorar a inclusão de pessoas com incapacidade, incluindo pessoas com dificuldades de aprendizagem e incapacidades cognitivas, pessoas com baixa visão e outras</a>.</p>
+
+                <p>A acessibilidade Web depende não só de conteúdos acessíveis, mas também de navegadores Web acessíveis e de outros agentes de utilizador. As ferramentas de autoria desempenham igualmente um papel importante na acessibilidade Web. Para uma visão geral de como estes componentes do desenvolvimento e da interação Web funcionam em conjunto, consulte:</p>
+                <ul>
+                    <li><strong><a href="https://www.w3.org/WAI/fundamentals/components/">Componentes Essenciais da Acessibilidade Web</a></strong></li>
+                    <li><strong><a href="https://www.w3.org/WAI/standards-guidelines/uaag/">Visão Geral das Diretrizes de Acessibilidade para Agentes de Utilizador (UAAG)</a></strong></li>
+                    <li><strong><a href="https://www.w3.org/WAI/standards-guidelines/atag/">Visão Geral das Diretrizes de Acessibilidade para Ferramentas de Autoria (ATAG)</a></strong></li>
+                </ul>
+                <p>Quando este documento faz referência às <q>WCAG 2</q>, pretende referir-se a qualquer e todas as versões das WCAG cujo número comece por 2.</p>
+			</section>
+			<section id="wcag-2-layers-of-guidance">
+				<h3>Camadas de Orientação das WCAG 2</h3>
+                <p>Os indivíduos e organizações que utilizam as WCAG são muito diversos e incluem designers e programadores Web, responsáveis pela definição de políticas, agentes de compras, professores e estudantes. Para responder às diferentes necessidades deste público, são disponibilizadas várias camadas de orientação, incluindo <em>princípios</em> gerais, <em>diretrizes</em> gerais, <em>critérios de sucesso</em> testáveis e uma vasta coleção de <em>técnicas suficientes</em>, <em>técnicas consultivas</em> e <em>falhas comuns documentadas</em>, acompanhadas de exemplos, ligações para recursos e código.</p>
+                <ul>
+                    <li>
+                        <p><strong>Princípios</strong> - No topo encontram-se quatro princípios que constituem a base da acessibilidade Web: <em>percetível, operável, compreensível e robusto</em>. Consulte também <a href="https://www.w3.org/WAI/WCAG22/Understanding/intro#understanding-the-four-principles-of-accessibility">Compreender os Quatro Princípios da Acessibilidade</a>.</p>
+                    </li>
+                    <li>
+                        <p><strong>Diretrizes</strong> - Sob os princípios encontram-se as diretrizes. As 13 diretrizes definem os objetivos fundamentais para os quais os autores devem trabalhar, de forma a tornar os conteúdos mais acessíveis a utilizadores com diferentes incapacidades. As diretrizes não são testáveis, mas fornecem o enquadramento e os objetivos gerais que ajudam os autores a compreender os critérios de sucesso e a implementar melhor as técnicas.</p>
+                    </li>
+                    <li>
+                        <p><strong>Critérios de Sucesso</strong> - Para cada diretriz, são disponibilizados critérios de sucesso testáveis que permitem utilizar as WCAG 2.2 em contextos onde sejam necessários requisitos e testes de conformidade, como especificações de design, aquisições, regulamentação e acordos contratuais. Para responder às necessidades de diferentes grupos e situações, são definidos três níveis de conformidade: A (mais baixo), AA e AAA (mais elevado). Informações adicionais sobre os níveis das WCAG podem ser encontradas em <a href="https://www.w3.org/WAI/WCAG22/Understanding/conformance#levels">Compreender os Níveis de Conformidade</a>.</p>
+                    </li>
+                    <li>
+                        <p><strong>Técnicas Suficientes e Consultivas</strong> - Para cada uma das <em>diretrizes</em> e <em>critérios de sucesso</em> do próprio documento WCAG 2.2, o Working Group documentou também uma grande variedade de <em>técnicas</em>. As técnicas são informativas e dividem-se em duas categorias: as que são <em>suficientes</em> para cumprir os critérios de sucesso e as que são <em>consultivas</em>. As técnicas consultivas vão além do que é exigido pelos critérios de sucesso individuais e permitem aos autores responder melhor às diretrizes. Algumas técnicas consultivas abordam barreiras de acessibilidade que não estão cobertas pelos critérios de sucesso testáveis. Quando são conhecidas falhas comuns, estas também são documentadas. Consulte igualmente <a href="https://www.w3.org/WAI/WCAG22/Understanding/understanding-techniques">Técnicas Suficientes e Consultivas em Compreender as WCAG 2.2</a>.</p>
+                    </li>
+                </ul>
+                <p>Todas estas camadas de orientação (princípios, diretrizes, critérios de sucesso e técnicas suficientes e consultivas) funcionam em conjunto para fornecer orientações sobre como tornar os conteúdos mais acessíveis. Os autores são encorajados a consultar e aplicar todas as camadas que lhes seja possível, incluindo as técnicas consultivas, de forma a responder da melhor forma às necessidades do maior número possível de utilizadores.</p>
+                <p>Note-se que mesmo conteúdos conformes com o nível mais elevado (AAA) não serão acessíveis a indivíduos com todos os tipos, graus ou combinações de incapacidade, particularmente nas áreas cognitiva, linguística e da aprendizagem. Os autores são incentivados a considerar toda a gama de técnicas, incluindo as técnicas consultivas, <a href="https://www.w3.org/TR/coga-usable/">Tornar o Conteúdo Utilizável para Pessoas com Incapacidades Cognitivas e Dificuldades de Aprendizagem</a>, bem como a procurar aconselhamento relevante sobre as melhores práticas atuais para garantir que os conteúdos Web sejam acessíveis, tanto quanto possível, a esta comunidade. Os <a href="https://www.w3.org/WAI/WCAG22/Understanding/understanding-metadata">metadados</a> podem ajudar os utilizadores a encontrar conteúdos mais adequados às suas necessidades. </p>
+			</section>
+			<section id="wcag-2-2-supporting-documents">
+				<h3>Documentos de Apoio das WCAG 2.2</h3>
+                <p>O documento WCAG 2.2 foi concebido para responder às necessidades de quem necessita de uma norma técnica estável e passível de referência. Outros documentos, designados documentos de apoio, baseiam-se no documento WCAG 2.2 e abordam outros objetivos importantes, incluindo a possibilidade de serem atualizados para descrever a forma como as WCAG podem ser aplicadas a novas tecnologias. Os documentos de apoio incluem: </p>
+                <ol class="enumar">
+                    <li>
+                        <p><strong><a href="https://www.w3.org/WAI/WCAG22/quickref/">Como Cumprir as WCAG 2.2</a></strong> - Uma referência rápida personalizável das WCAG 2.2 que inclui todas as diretrizes, critérios de sucesso e técnicas para utilização pelos autores durante o desenvolvimento e avaliação de conteúdos Web. Inclui conteúdo das WCAG 2.0, 2.1 e 2.2, podendo ser filtrado de várias formas para ajudar os autores a concentrarem-se no conteúdo relevante.</p>
+                    </li>
+                    <li>
+                        <p><strong><a href="https://www.w3.org/WAI/WCAG22/Understanding/">Compreender as WCAG 2.2</a></strong> - Um guia para compreender e implementar as WCAG 2.2. Existe um documento curto de “Compreensão” para cada diretriz e critério de sucesso das WCAG 2.2, bem como para tópicos fundamentais.</p>
+                    </li>
+                    <li>
+                        <p><strong><a href="https://www.w3.org/WAI/WCAG22/Techniques/">Técnicas para as WCAG 2.2</a></strong> - Uma coleção de técnicas e falhas comuns, cada uma apresentada num documento separado que inclui descrição, exemplos, código e testes.</p>
+                    </li>
+                    <li>
+                        <p><strong><a href="https://www.w3.org/WAI/standards-guidelines/wcag/docs/">Os Documentos WCAG 2</a></strong> - Uma breve introdução aos documentos de apoio das WCAG 2 e às orientações suplementares.</p>
+                    </li>
+          <li><p><strong><a href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/">Novidades nas WCAG 2.2</a></strong> apresenta os novos critérios de sucesso através de citações de personas que ilustram os problemas de acessibilidade. </p></li>
+                </ol>
+                <p>Consulte a <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Visão Geral das Diretrizes de Acessibilidade para Conteúdo Web (WCAG)</a> para obter uma descrição dos materiais de apoio das WCAG 2.2, incluindo recursos educativos relacionados com as WCAG 2. Recursos adicionais sobre temas como a justificação de negócio para a acessibilidade Web, o planeamento da implementação para melhorar a acessibilidade de sítios Web e políticas de acessibilidade estão disponíveis em <a href="https://www.w3.org/WAI/Resources/Overview">Recursos WAI</a>.</p>
+			</section>
+        	<section id="requirements-for-wcag-2-2">
+        		<h3>Requisitos para as WCAG 2.2</h3>
+                <p>As WCAG 2.2 cumprem um conjunto de <a href="https://w3c.github.io/wcag/requirements/22/">requisitos para as WCAG 2.2</a> que, por sua vez, herdam requisitos das versões anteriores das WCAG 2. Os requisitos estruturam o enquadramento global das diretrizes e asseguram a retrocompatibilidade. O Working Group utilizou também um conjunto menos formal de critérios de aceitação para os critérios de sucesso, com o objetivo de garantir que estes mantêm um estilo e um nível de qualidade semelhantes aos das WCAG 2.0. Estes requisitos limitaram aquilo que podia ser incluído nas WCAG 2.2. Esta limitação foi importante para preservar a natureza das WCAG 2.2 enquanto versão incremental das WCAG 2.</p>
+        	</section>
+    		<section id="comparison-with-wcag-2-1">
+                <h3>Comparação com as WCAG 2.1</h3>
+                <p>As WCAG 2.2 foram iniciadas com o objetivo de dar continuidade ao trabalho das WCAG 2.1: melhorar as orientações de acessibilidade para três grandes grupos: utilizadores com incapacidades cognitivas ou dificuldades de aprendizagem, utilizadores com baixa visão e utilizadores com incapacidades em dispositivos móveis. Foram propostas e avaliadas muitas formas de responder a estas necessidades, tendo um conjunto dessas propostas sido refinado pelo Working Group. Os requisitos estruturais herdados das WCAG 2.0, a clareza e o impacto das propostas, bem como o calendário disponível, conduziram ao conjunto final de critérios de sucesso incluídos nesta versão. O Working Group considera que as WCAG 2.2 representam um avanço incremental nas orientações de acessibilidade para conteúdo Web em todas estas áreas, mas sublinha que estas diretrizes não satisfazem todas as necessidades dos utilizadores.</p>
+
+                <p>As WCAG 2.2 baseiam-se nas WCAG 2.1 e mantêm retrocompatibilidade com estas, o que significa que as páginas Web conformes com as WCAG 2.2 são, no mínimo, tão acessíveis quanto as páginas conformes com as WCAG 2.1. Foram adicionados requisitos que se baseiam nas versões 2.1 e 2.0. As WCAG 2.2 removeram um critério de sucesso, <a href="#parsing">4.1.1 Análise Sintática</a>. Os autores que estejam obrigados por políticas a conformidade com as WCAG 2.0 ou 2.1 poderão atualizar os conteúdos para as WCAG 2.2, mas poderão ter de continuar a testar e reportar o critério 4.1.1. Os autores que seguem mais do que uma versão das diretrizes devem ter em atenção as seguintes adições.</p>
+				<section id="new-features-in-wcag-2-2">
+					<h4>Novidades nas WCAG 2.2</h4>
+                    <p>As WCAG 2.2 alargam as WCAG 2.1 através da adição de novos critérios de sucesso, de definições que lhes dão suporte e de diretrizes para organizar essas adições. Esta abordagem incremental ajuda a tornar claro que os sítios Web conformes com as WCAG 2.2 também estão conformes com as WCAG 2.1. O Accessibility Guidelines Working Group recomenda que os sítios Web adotem as WCAG 2.2 como novo objetivo de conformidade, mesmo quando as obrigações formais mencionem versões anteriores, de modo a proporcionar uma acessibilidade melhorada e antecipar futuras alterações nas políticas.</p>
+          <p>Os seguintes critérios de sucesso são novos nas WCAG 2.2:</p>
+                    <ul>
+                        <li>2.4.11 <a href="#focus-not-obscured-minimum">Foco Não Obscurecido (Mínimo)</a> (AA)</li>
+                        <li>2.4.12 <a href="#focus-not-obscured-enhanced">Foco Não Obscurecido (Melhorado)</a> (AAA)</li>
+                        <li>2.4.13 <a href="#focus-appearance">Aspeto do Foco</a> (AAA)</li>    
+                        <li>2.5.7 <a href="#dragging-movements">Movimentos de Arrastamento</a> (AA)</li>
+                        <li>2.5.8 <a href="#target-size-minimum">Tamanho do Alvo (Mínimo)</a> (AA)</li>
+                        <li>3.2.6 <a href="#consistent-help">Ajuda Consistente</a> (A)</li>
+                        <li>3.3.7 <a href="#redundant-entry">Entrada Redundante</a> (A)</li>
+                        <li>3.3.8 <a href="#accessible-authentication-minimum">Autenticação Acessível (Mínimo)</a> (AA)</li>
+                        <li>3.3.9 <a href="#accessible-authentication-enhanced">Autenticação Acessível (Melhorada)</a> (AAA)</li>
+                    </ul>
+                    <p>Os novos critérios de sucesso podem fazer referência a novos termos que também foram adicionados ao glossário e que fazem parte dos requisitos normativos desses critérios de sucesso.</p>
+          <p>As WCAG 2.2 introduzem igualmente novas secções que detalham aspetos da especificação suscetíveis de ter impacto na <a href="#privacy-summary">privacidade</a> e na <a href="#security-summary">segurança</a>.</p>
+          
+				</section>
+				<section id="numbering-in-wcag-2-2">
+					<h4>Numeração nas WCAG 2.2</h4>
+                    <p>Para evitar confusão para os implementadores para os quais a retrocompatibilidade com as versões das WCAG 2 é importante, os novos critérios de sucesso das WCAG 2.2 foram acrescentados no final do conjunto de critérios de sucesso da respetiva diretriz. Isto evita a necessidade de alterar a numeração das secções dos critérios de sucesso das WCAG 2, o que aconteceria se fossem inseridos novos critérios de sucesso entre critérios já existentes na diretriz. No entanto, isso significa que os critérios de sucesso de cada diretriz deixaram de estar agrupados por nível de conformidade. A ordem dos critérios de sucesso dentro de cada diretriz não implica qualquer informação sobre o nível de conformidade; apenas o indicador de nível de conformidade (A / AA / AAA) presente no próprio critério de sucesso fornece essa informação. A <a href="https://www.w3.org/WAI/WCAG22/quickref/">Referência Rápida das WCAG 2.2</a> disponibiliza uma forma de visualizar os critérios de sucesso agrupados por nível de conformidade, juntamente com muitas outras opções de filtragem e ordenação.</p>
+				</section>
+				<section id="conformance-to-wcag-2-2">
+					<h4>Conformidade com as WCAG 2.2</h4>
+                    <p>As WCAG 2.2 utilizam o mesmo modelo de conformidade das WCAG 2.0. Pretende-se que os sítios Web conformes com as WCAG 2.2 também estejam conformes com as WCAG 2.0 e as WCAG 2.1, o que significa que cumprem os requisitos de quaisquer políticas que façam referência às WCAG 2.0 ou às WCAG 2.1, ao mesmo tempo que respondem melhor às necessidades dos utilizadores da Web atual. </p>
+				</section>
+			</section>
+            <section id="later-versions-of-accessibility-guidelines">
+                <h3>Versões Futuras das Diretrizes de Acessibilidade</h3>
+                <p>Em paralelo com as WCAG 2.2, o Accessibility Guidelines Working Group está a desenvolver outra versão principal das diretrizes de acessibilidade. Espera-se que o resultado deste trabalho constitua uma reestruturação mais substancial das orientações de acessibilidade web do que seria realista para versões incrementais das WCAG 2. O trabalho segue uma metodologia de conceção centrada no utilizador e orientada pela investigação, com o objetivo de produzir o resultado mais eficaz e flexível possível, incluindo os papéis da criação de conteúdos, do suporte dos agentes de utilizador e do suporte das ferramentas de autoria. Trata-se de um esforço plurianual, pelo que as WCAG 2.2 são necessárias como medida intermédia para fornecer orientações de acessibilidade web atualizadas que reflitam as mudanças ocorridas na Web desde a publicação das WCAG 2.0. O Working Group poderá também desenvolver versões intermédias adicionais, dando continuidade às WCAG 2.2, num calendário semelhante e relativamente curto, para fornecer apoio adicional enquanto a versão principal não estiver concluída. </p>
+            </section>
+        </section>
+        <section class="principle" id="perceivable">
+            <h2> Percetível </h2>
+            <p>A informação e os componentes da interface do utilizador têm de ser apresentados aos utilizadores de formas que estes consigam percecionar.</p>
+
+            <section class="guideline" id="text-alternatives">
+                <h3>Alternativas em Texto</h3>
+                <p>Fornecer alternativas em texto para qualquer conteúdo não textual, para que possa ser convertido noutras formas de que as pessoas necessitem, tais como impressão ampliada, braille, fala, símbolos ou linguagem mais simples.</p>
+
+                <section data-include="sc/20/non-text-content.html" data-include-replace="true"></section>
+            </section>
+
+            <section class="guideline" id="time-based-media">
+                <h3>Multimédia Baseada no Tempo</h3>
+                <p>Fornecer alternativas para multimédia baseada no tempo.</p>
+
+                <section data-include="sc/20/audio-only-and-video-only-prerecorded.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/captions-prerecorded.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/audio-description-or-media-alternative-prerecorded.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/captions-live.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/audio-description-prerecorded.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/sign-language-prerecorded.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/extended-audio-description-prerecorded.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/media-alternative-prerecorded.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/audio-only-live.html" data-include-replace="true"></section>
+            </section>
+
+            <section class="guideline" id="adaptable">
+                <h3>Adaptável</h3>
+                <p>Criar conteúdos que possam ser apresentados de diferentes formas (por exemplo, com uma disposição mais simples) sem perda de informação ou de estrutura.</p>
+
+                <section data-include="sc/20/info-and-relationships.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/meaningful-sequence.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/sensory-characteristics.html" data-include-replace="true"></section>
+
+                <section data-include="sc/21/orientation.html" data-include-replace="true"></section>
+
+                <section data-include="sc/21/identify-input-purpose.html" data-include-replace="true"></section>
+              
+                <section data-include="sc/21/identify-purpose.html" data-include-replace="true"></section>
+
+          </section>
+
+            <section class="guideline" id="distinguishable">
+                <h3>Distinguível</h3>
+                <p>Tornar mais fácil para os utilizadores ver e ouvir os conteúdos, incluindo separar o primeiro plano do fundo.</p>
+
+                <section data-include="sc/20/use-of-color.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/audio-control.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/contrast-minimum.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/resize-text.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/images-of-text.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/contrast-enhanced.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/low-or-no-background-audio.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/visual-presentation.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/images-of-text-no-exception.html" data-include-replace="true"></section>
+
+                <section data-include="sc/21/reflow.html" data-include-replace="true"></section>
+
+                <section data-include="sc/21/non-text-contrast.html" data-include-replace="true"></section>
+
+                <section data-include="sc/21/text-spacing.html" data-include-replace="true"></section>
+
+                <section data-include="sc/21/content-on-hover-or-focus.html" data-include-replace="true"></section>
+
+            </section>
+
+        </section>
+        <section class="principle" id="operable">
+            <h2>Operável </h2>
+            <p>Os componentes da interface do utilizador e a navegação têm de ser operáveis.</p>
+
+            <section class="guideline" id="keyboard-accessible">
+                <h3>Acessível por Teclado</h3>
+                <p>Disponibilizar toda a funcionalidade através do teclado.</p>
+
+                <section data-include="sc/20/keyboard.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/no-keyboard-trap.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/keyboard-no-exception.html" data-include-replace="true"></section>
+              
+                <section data-include="sc/21/character-key-shortcuts.html" data-include-replace="true"></section>
+                
+            </section>
+
+            <section class="guideline" id="enough-time">
+                <h3>Tempo Suficiente</h3>
+                <p>Disponibilizar aos utilizadores tempo suficiente para ler e utilizar os conteúdos.</p>
+
+                <section data-include="sc/20/timing-adjustable.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/pause-stop-hide.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/no-timing.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/interruptions.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/re-authenticating.html" data-include-replace="true"></section>
+
+                <section data-include="sc/21/timeouts.html" data-include-replace="true"></section> 
+
+            </section>
+
+            <section class="guideline" id="seizures-and-physical-reactions">
+                <h3>Convulsões e Reações Físicas</h3>
+                <p>Não conceber conteúdos de forma que seja conhecida por provocar convulsões ou reações físicas.</p>
+
+                <section data-include="sc/20/three-flashes-or-below-threshold.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/three-flashes.html" data-include-replace="true"></section>
+                
+                <section data-include="sc/21/animation-from-interactions.html" data-include-replace="true"></section>
+
+            </section>
+
+            <section class="guideline" id="navigable">
+                <h3>Navegável</h3>
+                <p>Disponibilizar formas de ajudar os utilizadores a navegar, encontrar conteúdos e determinar onde se encontram.</p>
+
+                <section data-include="sc/20/bypass-blocks.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/page-titled.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/focus-order.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/link-purpose-in-context.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/multiple-ways.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/headings-and-labels.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/focus-visible.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/location.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/link-purpose-link-only.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/section-headings.html" data-include-replace="true"></section>
+
+                <section data-include="sc/22/focus-not-obscured-minimum.html" data-include-replace="true"></section>
+
+                <section data-include="sc/22/focus-not-obscured-enhanced.html" data-include-replace="true"></section>
+
+                <section data-include="sc/22/focus-appearance.html" data-include-replace="true"></section>
+
+            </section>
+
+            <section class="guideline" id="input-modalities">
+                <h3>Modalidades de Entrada</h3>
+                <p>Tornar mais fácil para os utilizadores operar funcionalidades através de vários modos de entrada para além do teclado.</p>
+
+                <section data-include="sc/21/pointer-gestures.html" data-include-replace="true"></section>
+
+                <section data-include="sc/21/pointer-cancellation.html" data-include-replace="true"></section>
+
+              	<section data-include="sc/21/label-in-name.html" data-include-replace="true"></section>
+            	
+                <section data-include="sc/21/motion-actuation.html" data-include-replace="true"></section>
+
+                <section data-include="sc/21/target-size-enhanced.html" data-include-replace="true"></section>
+
+                <section data-include="sc/21/concurrent-input-mechanisms.html" data-include-replace="true"></section>
+
+                <section data-include="sc/22/dragging-movements.html" data-include-replace="true"></section>
+
+                <section data-include="sc/22/target-size-minimum.html" data-include-replace="true"></section>
+              
+            </section>
+
+        </section>
+        <section class="principle" id="understandable">
+            <h2> Compreensível </h2>
+            <p>A informação e o funcionamento da interface do utilizador têm de ser compreensíveis.</p>
+
+            <section class="guideline" id="readable">
+                <h3>Legível</h3>
+                <p>Tornar o conteúdo textual legível e compreensível.</p>
+
+                <section data-include="sc/20/language-of-page.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/language-of-parts.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/unusual-words.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/abbreviations.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/reading-level.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/pronunciation.html" data-include-replace="true"></section>
+
+            </section>
+
+            <section class="guideline" id="predictable">
+                <h3>Previsível</h3>
+                <p>Fazer com que as páginas Web apareçam e funcionem de formas previsíveis.</p>
+
+                <section data-include="sc/20/on-focus.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/on-input.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/consistent-navigation.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/consistent-identification.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/change-on-request.html" data-include-replace="true"></section>
+				
+				<section data-include="sc/22/consistent-help.html" data-include-replace="true"></section>
+
+            </section>
+
+            <section class="guideline" id="input-assistance">
+                <h3>Assistência ao Preenchimento</h3>
+                <p>Ajudar os utilizadores a evitar e corrigir erros.</p>
+
+                <section data-include="sc/20/error-identification.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/labels-or-instructions.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/error-suggestion.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/error-prevention-legal-financial-data.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/help.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/error-prevention-all.html" data-include-replace="true"></section>
+              
+                <section data-include="sc/22/redundant-entry.html" data-include-replace="true"></section>
+
+                <section data-include="sc/22/accessible-authentication-minimum.html" data-include-replace="true"></section>
+
+                <section data-include="sc/22/accessible-authentication-enhanced.html" data-include-replace="true"></section>
+              
+            </section>
+
+        </section>
+        <section class="principle" id="robust">
+            <h2> Robusto </h2>
+            <p>O conteúdo tem de ser suficientemente robusto para poder ser interpretado por uma grande variedade de agentes de utilizador, incluindo tecnologias de apoio.</p>
+
+            <section class="guideline" id="compatible">
+                <h3>Compatível</h3>
+                <p>Maximizar a compatibilidade com agentes de utilizador atuais e futuros, incluindo tecnologias de apoio.</p>
+
+                <section data-include="sc/20/parsing.html" data-include-replace="true"></section>
+
+                <section data-include="sc/20/name-role-value.html" data-include-replace="true"></section>
+                
+                <section data-include="sc/21/status-messages.html" data-include-replace="true"></section>
+                
+           </section>
+
+        </section>
+        <section>
+            <h1>Conformidade</h1>
+
+            <p>Esta secção apresenta os requisitos de <a>conformidade</a> com as WCAG 2.2. Também fornece informações sobre como fazer declarações de conformidade, as quais são opcionais. Por fim, descreve o significado de ser <a>suportado em termos de acessibilidade</a>, uma vez que apenas formas de utilização de tecnologias suportadas em termos de acessibilidade podem ser <a>consideradas fiáveis</a> para efeitos de conformidade. <a href="https://www.w3.org/WAI/WCAG22/Understanding/conformance">Compreender a Conformidade</a> inclui explicações adicionais sobre o conceito de suporte em termos de acessibilidade.</p>
+            
+            <section id="interpreting-normative-requirements">
+                <h2>Interpretação dos Requisitos Normativos</h2>
+                
+                <p>O conteúdo principal das WCAG 2.2 é <a>normativo</a> e define requisitos que têm impacto nas declarações de conformidade. O material introdutório, os anexos, as secções assinaladas como “não normativas”, os diagramas, os exemplos e as notas são <a>informativos</a> (não normativos). O material não normativo fornece informação consultiva para ajudar na interpretação das diretrizes, mas não cria requisitos que tenham impacto numa declaração de conformidade.</p>
+                <p>As palavras-chave MAY, MUST, MUST NOT, NOT RECOMMENDED, RECOMMENDED, SHOULD e SHOULD NOT devem ser interpretadas conforme descrito em [[RFC2119]].</p>
+        	</section>
+
+            <section id="conformance-reqs">
+                <h2>Requisitos de Conformidade</h2>
+                <p>Para que uma página Web esteja conforme com as WCAG 2.2, todos os seguintes requisitos de conformidade têm de ser satisfeitos:</p>
+
+                <!-- This section is quoted in Understanding Conformance. If updated, the update needs to be copied there. -->
+                <section id="cc1">
+                    <h3>Nível de Conformidade</h3>
+                    <p>Um dos seguintes níveis de conformidade é integralmente satisfeito.</p>
+                    <ul>
+                        <li id="cc1_A">Para conformidade de Nível A (o nível mínimo de conformidade), a <a>página Web</a>
+                            <a>satisfaz</a> todos os critérios de sucesso de Nível A, ou é fornecida uma <a>versão alternativa conforme</a>.</li>
+                        <li id="cc1_AA">Para conformidade de Nível AA, a página Web satisfaz todos os critérios de sucesso de Nível A e de Nível AA, ou é fornecida uma versão alternativa conforme de Nível AA.</li>
+                        <li id="cc1_AAA">Para conformidade de Nível AAA, a página Web satisfaz todos os critérios de sucesso de Nível A, Nível AA e Nível AAA, ou é fornecida uma versão alternativa conforme de Nível AAA.</li>
+                    </ul>
+                    <p class="note">Embora a conformidade só possa ser alcançada nos níveis indicados, os autores são incentivados a reportar (na sua declaração) qualquer progresso no cumprimento de critérios de sucesso de níveis superiores ao nível de conformidade alcançado.</p>
+                    <p class="note">Não é recomendado exigir conformidade de Nível AAA como política geral para sítios Web completos, porque não é possível satisfazer todos os critérios de sucesso de Nível AAA para alguns conteúdos.</p>
+                </section>
+
+                <!-- This section is quoted in Understanding Conformance. If updated, the update needs to be copied there. -->
+                <section id="cc2">
+                    <h3>Páginas completas</h3>
+                    <p>A <a>conformidade</a> (e o nível de conformidade) aplica-se apenas a <a>página(s) Web</a> completas e não pode ser alcançada se parte de uma página Web for excluída.</p>
+                    <p class="note">Para efeitos de determinação da conformidade, as alternativas a parte do conteúdo de uma página são consideradas parte da página quando podem ser obtidas diretamente a partir da mesma, por exemplo, uma descrição longa ou uma apresentação alternativa de um vídeo.</p>
+                    <p class="note">Os autores de páginas Web que não possam estar conformes devido a conteúdos fora do seu controlo podem considerar uma <a href="#conformance-partial">Declaração de Conformidade Parcial</a>.</p>
+                  <p class="note">Uma página completa inclui cada variação da página que seja automaticamente apresentada para diferentes tamanhos de ecrã (por exemplo, variações numa página Web responsiva). Cada uma dessas variações tem de estar conforme (ou ter uma versão alternativa conforme) para que a página inteira esteja conforme.</p>
+                </section>
+
+                <!-- This section is quoted in Understanding Conformance. If updated, the update needs to be copied there. -->
+                <section id="cc3">
+                    <h3>Processos completos</h3>
+                    <p>Quando uma <a>página Web</a> é uma de uma série de páginas Web que apresentam um <a>processo</a> (isto é, uma sequência de passos que têm de ser concluídos para realizar uma atividade), todas as páginas Web do processo têm de estar conformes no nível especificado ou superior. (A conformidade não é possível num determinado nível se alguma página do processo não estiver conforme nesse nível ou superior.)</p>
+                    <aside class="example"><p>Uma loja online possui uma série de páginas utilizadas para selecionar e comprar produtos. Todas as páginas da série, do início ao fim (checkout), têm de estar conformes para que qualquer página que faça parte do processo esteja conforme.</p></aside>
+                </section>
+
+                <!-- This section is quoted in Understanding Conformance. If updated, the update needs to be copied there. -->
+                <section id="cc4">
+                    <h3>Apenas Formas de Utilização de Tecnologias Suportadas em termos de Acessibilidade</h3>
+
+                    <p>Apenas formas de utilização de <a>tecnologias</a> <a>suportadas em termos de acessibilidade</a> podem ser <a>consideradas fiáveis</a> para satisfazer os critérios de sucesso. Qualquer informação ou funcionalidade disponibilizada de uma forma que não seja suportada em termos de acessibilidade também tem de estar disponível de uma forma que seja suportada em termos de acessibilidade. (Consulte <a href="https://www.w3.org/WAI/WCAG22/Understanding/conformance#accessibility-support">Compreender o suporte em termos de acessibilidade</a>.)</p>
+
+                </section>
+
+            	<!-- This section is quoted in Understanding Conformidade. If updated, the update needs to be copied there. -->
+            	<section id="cc5">
+                    <h3>Não Interferência</h3>
+                    <p>Se <a>tecnologias</a> forem utilizadas de uma forma que não seja <a>suportada em termos de acessibilidade</a>, ou se forem utilizadas de uma forma não conforme, então não podem bloquear a capacidade dos utilizadores acederem ao restante conteúdo da página. Além disso, a <a>página Web</a> como um todo continua a satisfazer os requisitos de conformidade em cada uma das seguintes condições:</p>
+                    <ol>
+                        <li>quando qualquer tecnologia que não seja <a>considerada fiável</a> estiver ativada num agente de utilizador,</li>
+                        <li>quando qualquer tecnologia que não seja considerada fiável estiver desativada num agente de utilizador, e</li>
+                        <li>quando qualquer tecnologia que não seja considerada fiável não for suportada por um agente de utilizador</li>
+                    </ol>
+                    <p>Além disso, os seguintes critérios de sucesso aplicam-se a todo o conteúdo da página, incluindo conteúdo que não seja de outra forma considerado fiável para satisfazer a conformidade, porque a falha no seu cumprimento pode interferir com qualquer utilização da página:</p>
+                    <ul>
+                        <li><strong>1.4.2 - Controlo de Áudio</strong>,</li>
+                        <li><strong>2.1.2 - Sem Bloqueio de Teclado</strong>,</li>
+                        <li><strong>2.3.1 - Três Intermitências ou Abaixo do Limite</strong>, e</li>
+                        <li><strong>2.2.2 - Pausar, Parar, Ocultar</strong>.</li>
+                    </ul>
+                    <p class="note">Se uma página não puder estar conforme (por exemplo, uma página de teste de conformidade ou uma página de exemplo), não pode ser incluída no âmbito da conformidade nem numa declaração de conformidade.</p>
+
+                    <p>Para mais informações, incluindo exemplos, consulte <a href="https://www.w3.org/WAI/WCAG22/Understanding/conformance#conformance-requirements">Compreender os Requisitos de Conformidade</a>.</p>
+
+                </section>
+            </section>
+
+            <section id="conformance-claims">
+                <h2>Declarações de Conformidade (Opcional) </h2>
+                <p>A conformidade é definida apenas para <a>páginas Web</a>. No entanto, pode ser feita uma declaração de conformidade para abranger uma página, uma série de páginas ou múltiplas páginas Web relacionadas.</p>
+
+                <section id="conformance-required">
+                    <h3>Componentes Obrigatórios de uma Declaração de Conformidade</h3>
+                    <p>As declarações de conformidade <strong>não são obrigatórias</strong>. Os autores podem estar conformes com as WCAG 2.2 sem fazer uma declaração. Contudo, se for feita uma declaração de conformidade, esta <strong>tem de</strong> incluir as seguintes informações:</p>
+                    <ol>
+                        <li><strong>Data</strong> da declaração</li>
+                        <li><strong>Título, versão e URI das diretrizes </strong> “Diretrizes de Acessibilidade para Conteúdo Web 2.2 em <a href="https://www.w3.org/TR/WCAG22/">https://www.w3.org/TR/WCAG22/</a>”</li>
+                        <li><strong>Nível de conformidade</strong> satisfeito: (Nível A, AA ou AAA)</li>
+                        <li>
+                            <p><strong>Uma descrição concisa das páginas Web</strong>, tal como uma lista de URIs às quais a declaração se aplica, incluindo se os subdomínios estão incluídos na declaração.</p>
+                            <p class="note">As páginas Web podem ser descritas através de uma lista ou por uma expressão que descreva todos os URIs incluídos na declaração.</p>
+                            <p class="note">Produtos baseados na Web que não tenham um URI antes da instalação no sítio Web do cliente podem incluir uma declaração de que o produto estaria conforme após instalação.</p>
+                        </li>
+                        <li>Uma lista das <strong>
+                                <a>tecnologias de conteúdo Web</a>
+                                <a>consideradas fiáveis</a></strong>.</li>
+                    </ol>
+                    <p class="note">Se for utilizado um logótipo de conformidade, este constitui uma declaração e tem de ser acompanhado pelos componentes obrigatórios de uma declaração de conformidade listados acima.</p>
+                </section>
+
+                <section id="conformance-optional">
+                    <h3>Componentes Opcionais de uma Declaração de Conformidade </h3>
+                    <p>Para além dos componentes obrigatórios de uma declaração de conformidade acima indicados, considere fornecer informações adicionais para ajudar os utilizadores. As informações adicionais recomendadas incluem:</p>
+                    <ul>
+                        <li>Uma lista de critérios de sucesso, para além do nível de conformidade declarado, que tenham sido satisfeitos. Esta informação deve ser fornecida numa forma utilizável pelos utilizadores, preferencialmente através de metadados legíveis por máquina.</li>
+                        <li>Uma lista das tecnologias específicas que são “ <em>utilizadas mas não <a>consideradas fiáveis</a></em>”.</li>
+                        <li>Uma lista dos agentes de utilizador, incluindo tecnologias de apoio, que foram utilizados para testar o conteúdo.</li>
+                        <li>Uma lista das características específicas de acessibilidade do conteúdo, fornecida através de metadados legíveis por máquina.</li>
+                        <li>Informação sobre quaisquer medidas adicionais tomadas para além dos critérios de sucesso com o objetivo de melhorar a acessibilidade.</li>
+                        <li>Uma versão em metadados legíveis por máquina da lista de tecnologias específicas que são <a>consideradas fiáveis</a>.</li>
+                        <li>Uma versão em metadados legíveis por máquina da declaração de conformidade.</li>
+                    </ul>
+
+                    <p class="note">Consulte <a href="https://www.w3.org/WAI/WCAG22/Understanding/conformance#conformance-claims">Compreender as Declarações de Conformidade</a> para mais informações e exemplos de declarações de conformidade.</p>
+                    <p class="note">Consulte <a href="https://www.w3.org/WAI/WCAG22/Understanding/understanding-metadata">Compreender os Metadados</a> para mais informações sobre a utilização de metadados em declarações de conformidade.</p>
+
+                </section>
+            </section>
+
+            <section id="conformance-partial">
+                <h2>Declaração de Conformidade Parcial - Conteúdo de Terceiros</h2>
+                <p>As páginas Web às quais venha posteriormente a ser adicionado conteúdo adicional podem utilizar uma “declaração de conformidade parcial”. Por exemplo, um programa de correio eletrónico, um blogue, um artigo que permita aos utilizadores adicionar comentários ou aplicações que suportem conteúdo contribuído pelos utilizadores. Outro exemplo seria uma página, como um portal ou um sítio de notícias, composta por conteúdo agregado de múltiplos contribuidores, ou sítios que inserem automaticamente conteúdo proveniente de outras fontes ao longo do tempo, como acontece quando anúncios são inseridos dinamicamente.</p>
+                <p>Nestes casos, não é possível saber, no momento da publicação original, qual será o conteúdo não controlado das páginas. É importante notar que o conteúdo não controlado também pode afetar a acessibilidade do conteúdo controlado. Existem duas opções disponíveis:</p>
+                <ol>
+                    <li>
+                        <p>Pode ser feita uma determinação de conformidade com base no melhor conhecimento disponível. Se uma página deste tipo for monitorizada e corrigida (o conteúdo não conforme for removido ou tornado conforme) no prazo de dois dias úteis, então pode ser feita uma determinação ou declaração de conformidade, uma vez que, exceto erros em conteúdos contribuídos externamente que sejam corrigidos ou removidos quando detetados, a página está conforme. Não pode ser feita qualquer declaração de conformidade se não for possível monitorizar ou corrigir conteúdos não conformes;</p>
+                        <p><strong>OU</strong></p>
+                    </li>
+                    <li>
+                        <p>Pode ser feita uma “declaração de conformidade parcial” indicando que a página não está conforme, mas que poderia estar conforme se determinadas partes fossem removidas. A forma dessa declaração seria: “Esta página não está conforme, mas estaria conforme com as WCAG 2.2 no nível X se as seguintes partes provenientes de fontes não controladas fossem removidas.” Além disso, o seguinte também teria de ser verdadeiro relativamente ao conteúdo não controlado descrito na declaração de conformidade parcial:</p>
+                        <ol>
+                            <li>Não se trata de conteúdo sob controlo do autor.</li>
+                            <li>É descrito de uma forma que os utilizadores conseguem identificar (por exemplo, não pode ser descrito como “todas as partes que não controlamos”, a menos que estejam claramente identificadas como tal.)</li>
+                        </ol>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="conformance-partial-lang">
+                <h2>Declaração de Conformidade Parcial - Idioma</h2>
+                <p>Pode ser feita uma “declaração de conformidade parcial devido ao idioma” quando a página não está conforme, mas estaria conforme se existisse <a>suporte em termos de acessibilidade</a> para (todos) os idiomas utilizados na página. A forma dessa declaração seria: “Esta página não está conforme, mas estaria conforme com as WCAG 2.2 no nível X se existisse suporte em termos de acessibilidade para o(s) seguinte(s) idioma(s):”</p>
+            </section>
+
+            <section class="informative" id="privacy-summary">
+                <h2>Considerações sobre Privacidade</h2>
+                <p>Os critérios de sucesso desta especificação para os quais o Working Group identificou possíveis implicações para a privacidade, quer por fornecerem proteção aos utilizadores finais, quer por serem importantes para os fornecedores de sítios Web terem em consideração ao implementar funcionalidades concebidas para proteger a privacidade dos utilizadores, estão listados abaixo. Esta lista reflete o entendimento atual do Working Group, mas outros critérios de sucesso podem ter implicações para a privacidade das quais o Working Group não tenha conhecimento no momento da publicação.</p>
+                <p>Os critérios de sucesso desta especificação que podem estar relacionados com a privacidade são:</p>
+                <ul>
+                    <li><a href="#timeouts">2.2.6 Tempos Limite (AAA)</a></li>
+                    <li><a href="#redundant-entry">3.3.7 Entrada Redundante (A)</a></li>
+                </ul>
+
+            </section>
+
+            <section class="informative" id="security-summary">
+                <h2>Considerações sobre Segurança</h2>
+                <p>Os critérios de sucesso desta especificação para os quais o Working Group identificou possíveis implicações para a segurança, quer por fornecerem proteção aos utilizadores finais, quer por serem importantes para os fornecedores de sítios Web terem em consideração ao implementar funcionalidades concebidas para proteger a segurança dos utilizadores, estão listados abaixo. Esta lista reflete o entendimento atual do Working Group, mas outros critérios de sucesso podem ter implicações para a segurança das quais o Working Group não tenha conhecimento no momento da publicação.</p>
+                <p>Os critérios de sucesso desta especificação que podem estar relacionados com a segurança são:</p>
+                <ul>
+                    <li><a href="#non-text-content">1.1.1 Conteúdo Não Textual (A)</a></li>
+                    <li><a href="#identify-input-purpose">1.3.5 Identificar a Finalidade dos Campos de Entrada (AA)</a></li>
+                    <li><a href="#low-or-no-background-audio">1.4.7 Áudio de Fundo Reduzido ou Inexistente (AAA)</a></li>
+                    <li><a href="#timing-adjustable">2.2.1 Tempo Ajustável (A)</a></li>
+                    <li><a href="#re-authenticating">2.2.5 Reautenticação (AAA)</a></li>
+                    <li><a href="#timeouts">2.2.6 Tempos Limite (AAA)</a></li>
+                    <li><a href="#concurrent-input-mechanisms">2.5.6 Mecanismos de Entrada Concorrentes (AAA)</a></li>
+                    <li><a href="#error-suggestion">3.3.3 Sugestão de Erro (AA)</a></li>
+                    <li><a href="#redundant-entry">3.3.7 Entrada Redundante (A)</a></li>
+                    <li><a href="#accessible-authentication-minimum">3.3.8 Autenticação Acessível (Mínimo) (AA)</a></li>
+                    <li><a href="#accessible-authentication-enhanced">3.3.9 Autenticação Acessível (Melhorada) (AAA)</a></li>                    
+                </ul>
+            </section>
+
+        </section>
+        <section id="glossary">
+            <h1>Glossário</h1>
+            <dl id="terms">
+
+                <dt data-include="terms/20/abbreviation.html" data-include-replace="true"></dt>
+            	
+                <dt data-include="terms/20/accessibility-supported.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/alternative-for-time-based-media.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/ambiguous-to-users-in-general.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/ascii-art.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/assistive-technology.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/audio.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/audio-description.html" data-include-replace="true"></dt>
+                
+                <dt data-include="terms/20/audio-only.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/blinking.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/blocks-of-text.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/captcha.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/captions.html" data-include-replace="true"></dt>
+                
+                <dt data-include="terms/20/changes-of-context.html" data-include-replace="true"></dt>
+              
+                <dt data-include="terms/22/cognitive-function-test.html" data-include-replace="true"></dt>
+                
+                <dt data-include="terms/20/conformance.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/conforming-alternate-version.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/content.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/context-sensitive-help.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/contrast-ratio.html" data-include-replace="true"></dt>
+            	
+                <dt data-include="terms/20/correct-reading-sequence.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/21/css-pixel.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/21/down-event.html" data-include-replace="true"></dt>
+				
+                <dt data-include="terms/22/dragging-movement.html" data-include-replace="true"></dt>
+				
+                <dt data-include="terms/20/emergency.html" data-include-replace="true"></dt>
+
+              	<dt data-include="terms/20/essential.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/extended-audio-description.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/flash.html" data-include-replace="true"></dt>
+
+            	<dt data-include="terms/22/focus-indicator.html" data-include-replace="true"></dt>
+            	
+            	<dt data-include="terms/20/functionality.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/general-flash-and-red-flash-thresholds.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/human-language.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/idiom.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/image-of-text.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/informative.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/input-error.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/jargon.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/keyboard-interface.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/21/keyboard-shortcut.html" data-include-replace="true"></dt>
+                
+                <dt data-include="terms/20/label.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/large-scale.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/legal-commitments.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/link-purpose.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/live.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/lower-secondary-education-level.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/mechanism.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/media-alternative-for-text.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/21/motion-animation.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/22/minimum-bounding-box.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/name.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/navigated-sequentially.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/non-text-content.html" data-include-replace="true"></dt>
+                
+                <dt data-include="terms/20/normative.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/on-a-full-screen-window.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/paused.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/22/perimeter.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/21/pointer-input.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/prerecorded.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/presentation.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/primary-education-level.html" data-include-replace="true"></dt>
+                
+                <dt data-include="terms/20/process.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/programmatically-determined.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/programmatically-determined-link-context.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/programmatically-set.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/pure-decoration.html" data-include-replace="true"></dt>
+                
+                <dt data-include="terms/20/real-time-event.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/21/region.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/relationships.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/relative-luminance.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/relied-upon.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/role.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/same-functionality.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/same-relative-order.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/satisfies-a-success-criterion.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/section.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/21/set-of-web-pages.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/sign-language.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/sign-language-interpretation.html" data-include-replace="true"></dt>
+            	
+                <dt data-include="terms/21/single-pointer.html" data-include-replace="true"></dt>
+                
+                <dt data-include="terms/20/specific-sensory-experience.html" data-include-replace="true"></dt>
+                
+                <dt data-include="terms/21/state.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/21/status-message.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/structure.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/21/style-property.html" data-include-replace="true"></dt>
+              
+                <dt data-include="terms/20/supplemental-content.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/synchronized-media.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/21/target.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/technology.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/text.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/text-alternative.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/21/up-event.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/used-in-an-unusual-or-restricted-way.html" data-include-replace="true"></dt>
+                
+                <dt data-include="terms/20/user-agent.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/user-controllable.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/user-interface-component.html" data-include-replace="true"></dt>
+            	
+            	<dt data-include="terms/21/user-inactivity.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/video.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/video-only.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/viewport.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/visually-customized.html" data-include-replace="true"></dt>
+
+                <dt data-include="terms/20/web-page.html" data-include-replace="true"></dt>
+
+            </dl>
+        </section>
+    	    	
+      <div data-include="input-purposes.html" data-include-replace="true"></div>
+      
+    	<section class="appendix" id="changelog">
+    		<h2>Registo de Alterações</h2>
+            <p>Esta secção apresenta as alterações substanciais incorporadas nas WCAG 2.2 desde as WCAG 2.1, bem como as alterações efetuadas às WCAG 2.2 desde a sua publicação original em 05 de outubro de 2023. As <a href="https://www.w3.org/WAI/WCAG21/errata/">correções de erratas das WCAG 2.1</a> também foram incorporadas nas WCAG 2.2.</p>
+            <p>O <a href="https://github.com/w3c/wcag/commits/main/guidelines">histórico completo de commits das WCAG 2.2</a> está disponível.</p>
+            <ul>
+                <li>2020-03-30: Adicionado <a href="#accessible-authentication-minimum">Autenticação Acessível (Mínimo)</a>.</li>
+                <li>2020-05-27: Adicionado <q>Arrastamento</q> (mais tarde renomeado para <a href="#dragging-movements">Movimentos de Arrastamento</a>).</li>
+                <li>2020-07-19: Adicionado <q>Ajuda Encontrável</q> (mais tarde renomeado para <a href="#consistent-help">Ajuda Consistente</a>), <q>Espaçamento do Alvo do Apontador</q> (mais tarde renomeado para <a href="#target-size-minimum">Tamanho do Alvo (Mínimo)</a>) e <a href="#redundant-entry">Entrada Redundante</a>.</li>
+                <li>2020-08-04: Adicionado <q>Aspeto do Foco (Mínimo)</q> (mais tarde renomeado para <a href="#focus-appearance">Aspeto do Foco</a>).</li>
+                <li>2021-09-21: Adicionado <q>Autenticação Acessível (Sem Exceção)</q> (mais tarde renomeado para <a href="#accessible-authentication-enhanced">Autenticação Acessível (Melhorada)</a>.</li>
+                <li>2022-03-22: Adicionado <a href="#focus-not-obscured-minimum">Foco Não Obscurecido (Mínimo)</a>.</li>
+                <li>2022-05-30: Adicionado <a href="#focus-not-obscured-enhanced">Foco Não Obscurecido (Melhorado)</a>.</li>
+                <li>2023-06-05: Adicionadas secções sobre privacidade e segurança na conformidade.</li>
+        <li>2024-12-12: Republicadas as WCAG 2.2, incorporando as seguintes erratas:
+           <ul>
+              <li>modificadas as definições de <a>ponteiro único</a>, <a>utilizado de forma invulgar ou restrita</a>, <a>animação de movimento</a> e <a>determinado programaticamente</a></li>
+              <li>modificada a formatação das definições de <a>mudanças de contexto</a>, <a>limites gerais de intermitência e intermitência vermelha</a>, <a>teste de função cognitiva</a> e <a>estrutura</a></li>
+              <li>removida a definição obsoleta de <q>encloses</q></li>
+              <li>corrigido erro tipográfico na lista de <a href="#input-purposes">finalidades dos campos de entrada</a></li>
+              <li>modificada a formatação de Tamanho do Alvo (Mínimo) e Autenticação Acessível (Mínimo)</li>
+              <li>modificada a apresentação visual de conteúdo identificado como Novo</li>
+              <li>modificada a linguagem relativa a dispositivos no <a href="#abstract">Resumo</a></li>
+              <li>efetuadas alterações editoriais para melhorar a utilização consistente das definições nos critérios de sucesso</li>
+              <li>efetuadas alterações editoriais para melhorar a utilização consistente dos termos <q>critério(s) de sucesso</q>, <q>web</q>, <q>sítio Web</q> e <q>página Web</q></li>
+           </ul>
+        </li>
+            </ul>
+    	</section>
+    	<section class="appendix informative section" id="acknowledgements">
+    		<h3>Agradecimentos</h3>
+            <p>Informações adicionais sobre a participação no Accessibility Guidelines Working Group (AG WG) podem ser encontradas na <a href="https://www.w3.org/WAI/GL/">página do Working Group</a>.</p>
+    		<div data-include="../acknowledgements/ag-wg-active.html" data-include-replace="true"></div>
+    		<div data-include="../acknowledgements/ag-contributors.html" data-include-replace="true"></div>
+    		<div data-include="../acknowledgements/funders.html" data-include-replace="true"></div>
+    	</section>
+    </body>
+</html>

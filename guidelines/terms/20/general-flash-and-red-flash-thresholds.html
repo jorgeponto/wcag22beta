@@ -1,0 +1,43 @@
+<dt><dfn id="dfn-general-flash-and-red-flash-thresholds">limites gerais de flash e flash vermelho</dfn></dt>
+<dd>
+   
+   <p>um <a>flash</a> ou uma sequência de imagens em rápida mudança está abaixo do limite (ou seja, o conteúdo <strong>passa</strong>) se qualquer uma das seguintes condições for verdadeira:
+   </p>
+   
+   <ul>
+      
+      <li>não existem mais de três <strong>flashes gerais</strong> e/ou não existem mais de três <strong>flashes vermelhos</strong> em qualquer período de um segundo; ou
+      </li>
+      
+      <li>a área combinada dos flashes que ocorrem em simultâneo não ocupa mais do que um total de 0,006 esterradianos em qualquer campo visual de 10 graus no ecrã (25% de qualquer campo visual de 10 graus no ecrã) à distância de visualização típica
+      </li>
+      
+   </ul>
+   
+   <p>em que:</p>
+   
+   <ul>
+      
+      <li>Um <strong>flash geral</strong> é definido como um par de alterações opostas na <a>luminância relativa</a> de 10% ou mais da luminância relativa máxima (1,0), em que a luminância relativa da imagem mais escura é inferior a 0,80; e em que "um par de alterações opostas" corresponde a um aumento seguido de uma diminuição, ou a uma diminuição seguida de um aumento; e
+      </li>
+      
+      <li>Um <strong>flash vermelho</strong> é definido como qualquer par de transições opostas envolvendo um vermelho saturado
+      </li>
+      
+   </ul>
+   
+   <p><em>Exceção:</em> Um efeito intermitente que constitua um padrão fino e equilibrado, como ruído branco ou um padrão alternado de tabuleiro de xadrez com "quadrados" inferiores a 0,1 grau (do campo visual à distância de visualização típica) de lado, não viola os limites.
+   </p>
+   
+   <p class="note">Para software geral ou conteúdo Web, a utilização de um retângulo de 341 x 256 pixéis em qualquer área do ecrã apresentado quando o conteúdo é visualizado a 1024 x 768 pixéis fornece uma boa estimativa de um campo visual de 10 graus para tamanhos e distâncias de visualização padrão (por exemplo, ecrã de 15-17 polegadas a 22-26 polegadas de distância). Esta resolução de 75 - 85 ppi é conhecida por ser inferior e, portanto, mais conservadora do que a resolução nominal de 96 ppi de pixéis CSS nas especificações CSS. Ecrãs de resolução superior que apresentem a mesma renderização do conteúdo produzem imagens menores e mais seguras, razão pela qual são utilizadas resoluções mais baixas para definir os limites.
+   </p>
+   
+   <p class="note">Uma transição corresponde à alteração na luminância relativa (ou luminância relativa/cor no caso de flashes vermelhos) entre picos e vales adjacentes num gráfico de medição da luminância relativa (ou luminância relativa/cor no caso de flashes vermelhos) ao longo do tempo. Um flash consiste em duas transições opostas.
+   </p>
+
+   <p class="note">A nova definição de trabalho na área para <strong>"par de transições opostas envolvendo um vermelho saturado"</strong> (das WCAG 2.2) corresponde a um par de transições opostas em que uma transição é para ou a partir de um estado com um valor R/(R + G + B) maior ou igual a 0,8, e a diferença entre estados é superior a 0,2 (sem unidade) no diagrama de cromaticidade CIE 1976 UCS. [[ISO_9241-391]] </p>
+   
+   <p class="note">Existem ferramentas disponíveis que realizam análise a partir da captura de vídeo do ecrã. Contudo, não é necessária qualquer ferramenta para avaliar esta condição se o efeito intermitente for inferior ou igual a 3 flashes em qualquer período de um segundo. O conteúdo passa automaticamente (consulte os pontos #1 e #2 acima).
+   </p>
+   
+</dd>

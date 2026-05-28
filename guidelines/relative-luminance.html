@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/base.css"/>
+    <title>Versão em MathML da definição de luminância relativa</title>
+  </head>
+
+  <body>
+    <h1>Versão em MathML da definição de luminância relativa</h1>
+
+    <p>O seguinte é uma versão em MathML da <a href="./#dfn-relative-luminance">definição de luminância relativa do WCAG 2.2</a>. Consulte <a href="https://www.w3.org/Math/Software/mathml_software_cat_browsers.html">Software MathML - Navegadores</a> para informação sobre navegadores e plugins que suportam MathML, que pode ser necessário para apresentar corretamente esta informação.</p>
+
+    <dl>
+      <dt><dfn data-dfn-type="dfn" id="dfn-relative-luminance" tabindex="0">luminância relativa</dfn></dt>
+
+      <dd>
+        <p>a luminosidade relativa de qualquer ponto num espaço de cores, normalizada para 0 para o preto mais escuro e 1 para o branco mais claro</p>
+
+        <div class="note" role="note" id="issue-container-generatedID-128">
+          <div role="heading" class="note-title marker" id="h-note-128" aria-level="3">
+            <span>Nota</span>
+          </div>
+
+          <div>
+            <p>Para o espaço de cores sRGB, a luminância relativa de uma cor é definida como:</p>
+
+            <!-- MathML mantido intacto -->
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mstyle>
+                <mi>L</mi>
+                <mo>=</mo>
+                <mn>0.2126</mn>
+                <mo>×</mo>
+                <mi>R</mi>
+                <mo>+</mo>
+                <mn>0.7152</mn>
+                <mo>×</mo>
+                <mi>G</mi>
+                <mo>+</mo>
+                <mn>0.0722</mn>
+                <mo>×</mo>
+                <mi>B</mi>
+              </mstyle>
+            </math>
+
+            <p>onde <strong>R</strong>, <strong>G</strong> e <strong>B</strong> são definidos como:</p>
+
+            <ul>
+              <li>
+                Se RsRGB ≤ 0.04045 então R = RsRGB / 12.92 caso contrário R = ((RsRGB + 0.055) / 1.055) ^ 2.4
+              </li>
+
+              <li>
+                Se GsRGB ≤ 0.04045 então G = GsRGB / 12.92 caso contrário G = ((GsRGB + 0.055) / 1.055) ^ 2.4
+              </li>
+
+              <li>
+                Se BsRGB ≤ 0.04045 então B = BsRGB / 12.92 caso contrário B = ((BsRGB + 0.055) / 1.055) ^ 2.4
+              </li>
+            </ul>
+
+            <p>e RsRGB, GsRGB e BsRGB são definidos como:</p>
+
+            <ul>
+              <li>RsRGB = R8bit / 255</li>
+              <li>GsRGB = G8bit / 255</li>
+              <li>BsRGB = B8bit / 255</li>
+            </ul>
+
+            <p>O símbolo "^" representa a operação de exponenciação. (Fórmula retirada de [[SRGB]].)</p>
+          </div>
+        </div>
+
+        <div class="note" role="note" id="issue-container-generatedID-129">
+          <div role="heading" class="note-title marker" aria-level="3">
+            <span>Nota</span>
+          </div>
+          <p>Antes de maio de 2021, o valor 0.04045 nesta definição era diferente (0.03928). Foi atualizado a partir de uma versão anterior da especificação e não tem impacto prático nos cálculos.</p>
+        </div>
+
+        <div class="note" role="note" id="issue-container-generatedID-130">
+          <div role="heading" class="note-title marker" aria-level="3">
+            <span>Nota</span>
+          </div>
+          <p>A maioria dos sistemas atuais assume codificação sRGB. A menos que seja conhecido outro espaço de cores, deve-se avaliar em sRGB. Para outros espaços de cor, ver <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum">Compreender o Critério de Sucesso 1.4.3</a>.</p>
+        </div>
+
+        <div class="note" role="note" id="issue-container-generatedID-131">
+          <div role="heading" class="note-title marker" aria-level="3">
+            <span>Nota</span>
+          </div>
+          <p>Se ocorrer dithering após a entrega, usa-se o valor de cor original. Se ocorrer na origem, devem ser usados valores médios das cores.</p>
+        </div>
+
+        <div class="note" role="note" id="issue-container-generatedID-132">
+          <div role="heading" class="note-title marker" aria-level="3">
+            <span>Nota</span>
+          </div>
+          <p>Existem ferramentas que fazem automaticamente estes cálculos ao testar contraste e flashes.</p>
+        </div>
+      </dd>
+
+      <dt id="bib-srgb">[SRGB]</dt>
+
+      <dd>
+        <a href="https://webstore.iec.ch/publication/6169">
+          <cite>Sistemas multimédia e equipamento - Medição e gestão de cor - Parte 2-1: Gestão de cor - Espaço de cor RGB predefinido - sRGB</cite>
+        </a>. IEC.
+        URL: <a href="https://webstore.iec.ch/publication/6169">https://webstore.iec.ch/publication/6169</a>
+      </dd>
+
+    </dl>
+  </body>
+</html>

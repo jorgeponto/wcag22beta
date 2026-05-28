@@ -1,0 +1,57 @@
+<dt><dfn id="dfn-relative-luminance">luminância relativa</dfn></dt>
+<dd>
+   
+   <p>o brilho relativo de qualquer ponto num espaço de cor, normalizado para 0 no preto mais escuro e 1 no branco mais claro
+   </p>
+   
+  <div class="note">
+   <p>Para o espaço de cor sRGB, a luminância relativa de uma cor é definida como L = 0.2126
+      * <strong>R</strong> + 0.7152 * <strong>G</strong> + 0.0722 * <strong>B</strong> em que <strong>R</strong>, <strong>G</strong> e <strong>B</strong> são definidos como:
+   </p>
+   
+   <ul>
+      
+      <li>se RsRGB &lt;= 0.04045 então <strong>R</strong> = RsRGB/12.92 senão <strong>R</strong> = ((RsRGB+0.055)/1.055) ^ 2.4
+      </li>
+      
+      <li>se GsRGB &lt;= 0.04045 então <strong>G</strong> = GsRGB/12.92 senão <strong>G</strong> = ((GsRGB+0.055)/1.055) ^ 2.4
+      </li>
+      
+      <li>se BsRGB &lt;= 0.04045 então <strong>B</strong> = BsRGB/12.92 senão <strong>B</strong> = ((BsRGB+0.055)/1.055) ^ 2.4
+      </li>
+      
+   </ul>
+   
+   <p>e RsRGB, GsRGB e BsRGB são definidos como:</p>
+   
+   <ul>
+      
+      <li>RsRGB = R8bit/255</li>
+      
+      <li>GsRGB = G8bit/255</li>
+      
+      <li>BsRGB = B8bit/255</li>
+      
+   </ul>
+   
+   <p>O carácter "^" representa o operador de exponenciação. (Fórmula retirada de 
+      [[SRGB]].)
+   </p>
+
+  </div>
+
+  <p class="note">Antes de maio de 2021, o valor de 0.04045 na definição era diferente (0.03928). Foi retirado de uma versão anterior da especificação e foi atualizado. Não tem efeito prático nos cálculos no contexto destas diretrizes.</p>
+  
+   <p class="note">Quase todos os sistemas atualmente utilizados para visualizar conteúdo Web assumem codificação sRGB. A menos que se saiba que outro espaço de cor será utilizado para processar e apresentar o conteúdo, os autores devem avaliar utilizando o espaço de cor sRGB. Se forem utilizados outros espaços de cor, consulte <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum">Understanding Success Criterion 1.4.3</a>.
+   </p>
+   
+   <p class="note">Se ocorrer dithering após a disponibilização, então é utilizado o valor da cor de origem. Para cores sujeitas a dithering na origem, devem ser utilizados os valores médios das cores sujeitas a dithering (média de R, média de G e média de B).
+   </p>
+   
+   <p class="note">Existem ferramentas disponíveis que efetuam automaticamente os cálculos ao testar contraste e flashes.
+   </p>
+   
+   <p class="note">Está disponível uma <a href="relative-luminance.html">página separada com a definição de luminância relativa utilizando MathML</a> para apresentar as fórmulas.
+   </p>
+   
+</dd>

@@ -1,0 +1,28 @@
+<section id="pointer-cancellation" class="sc">
+            
+   <h4>Cancelamento do Ponteiro</h4>
+            
+   <p class="conformance-level">A</p>
+            
+   <p>Para <a>funcionalidades</a> que possam ser operadas utilizando um <a>único ponteiro</a>, pelo menos uma das seguintes condições é verdadeira:</p>
+            
+   <dl>
+   
+   <dt>Sem Evento de Pressão</dt>
+     <dd>O <a>evento de pressão</a> do ponteiro não é utilizado para executar qualquer parte da função;</dd>
+                  
+   <dt>Abortar ou Anular</dt>
+     <dd>A conclusão da função ocorre no <a>evento de libertação</a>, e existe um <a>mecanismo</a> disponível para abortar a função antes da conclusão ou anular a função após a conclusão;</dd>
+                  
+   <dt>Reversão na Libertação</dt>
+     <dd>O evento de libertação reverte qualquer resultado do evento de pressão anterior;</dd>
+                  
+   <dt>Essencial</dt>
+     <dd>Concluir a função no evento de pressão é <a>essencial</a>.</dd>
+                  
+   </dl>
+   <p class="note">As funções que emulam a pressão de uma tecla de teclado ou de teclado numérico são consideradas essenciais.</p>
+            
+  <p class="note">Este requisito aplica-se a conteúdo Web que interpreta ações do ponteiro (ou seja, não se aplica a ações necessárias para operar o agente de utilizador ou a tecnologia de apoio).</p>
+  
+</section>

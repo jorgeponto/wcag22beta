@@ -1,0 +1,27 @@
+<section id="content-on-hover-or-focus" class="sc">
+
+   <h4>Conteúdo ao Passar com o Ponteiro ou ao Receber Foco</h4>
+            
+   <p class="conformance-level">AA</p>
+       
+      <p>Quando receber e depois remover o hover do ponteiro ou o foco do teclado faz com que conteúdo adicional se torne visível e depois oculto, as seguintes condições são verdadeiras:</p>
+
+  <dl>
+
+    <dt>Descartável</dt>
+    <dd>Está disponível um <a>mecanismo</a> para descartar o conteúdo adicional sem mover o hover do ponteiro ou o foco do teclado, exceto quando o conteúdo adicional comunica um <a>erro de introdução de dados</a> ou não oculta nem substitui outro conteúdo;</dd>
+
+    <dt>Sobreponível</dt>
+   <dd>Se o hover do ponteiro puder ativar o conteúdo adicional, então o ponteiro pode ser movido sobre o conteúdo adicional sem que este desapareça;</dd>
+
+    <dt>Persistente</dt>
+    <dd>O conteúdo adicional permanece visível até que o hover ou o foco que o ativou seja removido, o utilizador o descarte ou a sua informação deixe de ser válida.</dd>
+
+  </dl>
+      
+      <p>Exceção: A apresentação visual do conteúdo adicional é controlada pelo <a>agente de utilizador</a> e não é modificada pelo autor.</p>
+
+      <p class="note">Exemplos de conteúdo adicional controlado pelo agente de utilizador incluem as dicas contextuais do navegador criadas através da utilização do <a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute"><code>atributo title</code></a> [[HTML]].</p>
+     <p class="note">Dicas contextuais personalizadas, submenus e outros popups não modais apresentados ao passar com o ponteiro ou ao receber foco são exemplos de conteúdo adicional abrangido por este critério.</p>
+     <p class="note">Este critério aplica-se ao conteúdo que surge para além do próprio componente desencadeador. Uma vez que os componentes ocultos que se tornam visíveis ao receber foco do teclado (como ligações utilizadas para saltar para outra parte da página) não apresentam conteúdo adicional, não são abrangidos por este critério.</p>
+  </section>
